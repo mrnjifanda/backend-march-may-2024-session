@@ -1,0 +1,12 @@
+{
+  "name": "level5-day-one",
+  "version": "1.0.0",
+  "description": "First Node Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
