@@ -1,0 +1,61 @@
+<div class="">
+
+  <form [formGroup]="createTaskForm" action="" (submit)="createTask()">
+    <div class="">
+      <label for="">Name:</label>
+      <input type="text" name="name" formControlName="name" placeholder="Enter task name">
+    </div>
+
+    <div class="">
+      <label for="">Description:</label>
+      <textarea name="description" formControlName="description" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="">
+      <label for="">Due Date:</label>
+      <input type="date" name="due_date" formControlName="due_date" placeholder="Due date">
+    </div>
+
+    <button type="submit">Create task</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      @for (task of tasks; track task._id) {
+        <tr >
+          <td>1</td>
+          <td>{{ task.name }}</td>
+          <td>{{ task.description}}</td>
+          <td>
+            @if (task.isCompleted == true) {
+              <span class="status complete">Complete</span>
+            } @else {
+              <span class="status not-complete">In progress</span>
+            }
+          </td>
+          <td>
+            <a href="#">View</a>
+            <a href="#">Delete</a>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="4">Empty task, please insert</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+
+<router-outlet></router-outlet>

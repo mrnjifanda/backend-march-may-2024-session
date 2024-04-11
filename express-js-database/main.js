@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const port = 3000;
 
 mongoose.connect("mongodb://localhost:27017/level5_tasks_management")
 .then(connection => {
 
     const app = express();
+    app.use(cors());
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
 

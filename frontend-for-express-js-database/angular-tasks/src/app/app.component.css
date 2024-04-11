@@ -1,0 +1,14 @@
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+}    
+
+.status.complete {
+    background-color: rgb(84, 118, 84);
+}
+
+.status.not-complete {
+    background-color: rgb(113, 53, 53);
+}

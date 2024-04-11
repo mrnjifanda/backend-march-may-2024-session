@@ -3,6 +3,7 @@ const Task = require('../models/Task');
 const create = async (request, response) => {
 
     const body = request.body;
+    console.log(body);
     if (body.name && body.description && body.due_date) {
         const task = new Task({
            name: body.name,
