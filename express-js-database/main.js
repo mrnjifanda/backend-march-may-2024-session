@@ -13,9 +13,11 @@ mongoose.connect("mongodb://localhost:27017/level5_tasks_management")
 
     const indexRoute = require('./routes/index.route');
     const tasksRoute = require('./routes/tasks.route');
+    const authRoute = require('./routes/auth.route');
 
     app.use('/', indexRoute);
     app.use('/tasks', tasksRoute);
+    app.use('/auth', authRoute);
 
     app.listen(port, () => {
         console.log(`Example app listening at http://localhost:${port}`);
