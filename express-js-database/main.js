@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const port = 3000;
+require('dotenv').config();
 
-mongoose.connect("mongodb://localhost:27017/level5_tasks_management")
+const port = process.env.PORT;
+
+mongoose.connect(process.env.DATABASE_URL)
 .then(connection => {
 
     const app = express();
