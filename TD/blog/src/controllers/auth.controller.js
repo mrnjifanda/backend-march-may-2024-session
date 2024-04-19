@@ -32,4 +32,16 @@ const login = async (request, response, next) => {
     );
 }
 
-module.exports = { register, login };
+const confirmEmail = async (request, response, next) => {
+
+    const body = request.body;
+    const confirm = await authService.confirmEmail(body.email, body.code);
+    if (!confirm.error) {
+
+        return response.json(res.success(confirm.data));
+    }
+
+    return response.status(422).json(res.error(confirm.data));
+}
+
+module.exports = { register, login, confirmEmail };
