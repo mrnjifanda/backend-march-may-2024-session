@@ -1,0 +1,67 @@
+<div class="post">
+    <div class="container">
+        <h1>{{ article.title }}</h1>
+        <p class="post-infos">{{ article.created_at }} Posted by {{ article.author.username }}</p>
+        <div class="post-content">
+            <div class="">{{ article.description }}</div>
+        </div>
+
+        <div class="post-comments">
+            <h2 class="post-comments-title">Comments</h2>
+            <div class="post-comments-contents">
+                <div class="post-comments-content">
+                    <div class="comment-left">
+                        <img src="assets/images/author.png" alt="">
+                        <p>Author</p>
+                    </div>
+                    <div class="comment-right">
+                        <span>Author commented 2 days ago</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quia odit saepe expedita placeat, autem explicabo nihil rerum nam quisquam assumenda, temporibus omnis aliquam dolorum ducimus vero eos? Accusantium, nulla!</p>
+                    </div>
+                </div>
+
+                <div class="post-comments-content">
+                    <div class="comment-left">
+                        <img src="assets/images/author.png" alt="">
+                        <p>Author</p>
+                    </div>
+                    <div class="comment-right">
+                        <span>Author commented 2 days ago</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quia odit saepe expedita placeat, autem explicabo nihil rerum nam quisquam assumenda, temporibus omnis aliquam dolorum ducimus vero eos? Accusantium, nulla!</p>
+                    </div>
+                </div>
+
+                <div class="post-comments-content">
+                    <div class="comment-left">
+                        <img src="assets/images/author.png" alt="">
+                        <p>Author</p>
+                    </div>
+                    <div class="comment-right">
+                        <span>Author commented 2 days ago</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quia odit saepe expedita placeat, autem explicabo nihil rerum nam quisquam assumenda, temporibus omnis aliquam dolorum ducimus vero eos? Accusantium, nulla!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leave-a-comment">
+                <h3>Leave a</h3>
+                <div class="form-comment">
+                    <div class="comment-left">
+                        <img src="assets/images/author.png" alt="">
+                        <p>Author</p>
+                    </div>
+                    <div class="comment-right">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <textarea class="form-input" name="" id="" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="flex flex-end">
+                                <button class="btn btn-blue" type="submit">Submit Comment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

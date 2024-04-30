@@ -16,10 +16,8 @@ mongoose.connect(database).then(() => {
     const authRoute = require('./routes/auth.route');
     const postRoute = require('./routes/post.route');
 
-    const authMiddleware = require('./src/middlewares/auth.middleware');
-
     app.use('/api/auth', authRoute);
-    app.use('/api/post', authMiddleware.verifyAuth, postRoute);
+    app.use('/api/post', postRoute);
 
     app.listen(port, () => {
         console.log('Application listening on http://localhost:' + port);

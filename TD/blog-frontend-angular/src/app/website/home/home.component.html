@@ -1,0 +1,41 @@
+<header class="home">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a routerLink="/auth" class="btn">Login</a></li>
+                <li><a routerLink="/auth" class="btn">Register</a></li>
+            </ul>
+        </nav>
+        <div class="home-title">
+            <h2>Seven Blog</h2>
+            <p>Welcom to the big seven blog</p>
+        </div>
+    </div>
+</header>
+
+<div class="search">
+    <div class="container">
+        <form action="/search" method="GET">
+            <input type="search" name="q" placeholder="search by title">
+        </form>
+    </div>
+</div>
+
+<div class="posts">
+    <div class="container">
+        <h2>Last Three articles</h2>
+        <div class="posts-cards">
+            @for (post of posts; track post) {
+                <div class="card">
+                    <img src="{{ post.picture }}" alt="">
+                    <div class="card-content">
+                        <h4><a routerLink="/blog/{{ post._id }}">{{ post.title }}</a></h4>
+                        <p>{{ post.description }}</p>
+                    </div>
+                </div>
+            } @empty {
+                <h4>Not post</h4>
+            }
+        </div>
+    </div>
+</div>
