@@ -20,38 +20,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td data-label="N°">1</td>
-                            <td data-label="Title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
-                            <td data-label="Date°">2024-05-01</td>
-                            <td data-label="Actions">
-                                <a routerLink="/dashboard/update-article/1">Edit</a> | <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-label="N°">1</td>
-                            <td data-label="Title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
-                            <td data-label="Date°">2024-05-01</td>
-                            <td data-label="Actions">
-                                <a routerLink="/dashboard/update-article/1">Edit</a> | <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-label="N°">1</td>
-                            <td data-label="Title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
-                            <td data-label="Date°">2024-05-01</td>
-                            <td data-label="Actions">
-                                <a routerLink="/dashboard/update-article/1">Edit</a> | <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td data-label="N°">1</td>
-                            <td data-label="Title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
-                            <td data-label="Date°">2024-05-01</td>
-                            <td data-label="Actions">
-                                <a routerLink="/dashboard/update-article/1">Edit</a> | <a href="#">Delete</a>
-                            </td>
-                        </tr>
+                        @for (post of posts; track post) {
+                            <tr>
+                                <td data-label="N°">1</td>
+                                <td data-label="Title">{{ post.title }}</td>
+                                <td data-label="Date°">{{ post.created_at }}</td>
+                                <td data-label="Actions">
+                                    <a routerLink="/dashboard/update-article/{{ post._id }}">Edit</a> | <a href="#">Delete</a>
+                                </td>
+                            </tr>
+                        } @empty {
+                            <tr>
+                                <td colspan="4">Not post, please enter</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
 

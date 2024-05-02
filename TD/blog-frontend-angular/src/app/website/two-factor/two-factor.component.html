@@ -1,0 +1,22 @@
+<div class="auth">
+    <div class="container">
+        <div class="column">
+            <div class="auth-left">
+                <h2>Confirm your email</h2>
+                <form [formGroup]="confirmForm" (submit)="confirm()">
+                    <div class="form-group">
+                        <input class="form-input" formControlName="code" name="code" type="text" placeholder="code">
+                        <span class="form-error-message">Error message</span>
+                    </div>
+
+                    <div class="forgot center">
+                        <a href="#">Resent</a>
+                    </div>
+                    <div class="flex flex-end">
+                        <button type="submit" class="btn">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
