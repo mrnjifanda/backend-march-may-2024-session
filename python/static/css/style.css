@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+form {
+    width: 200px;
+    background: #c1c1c1;
+    margin: 100px auto;
+    padding: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button[type=submit] {
+    width: 100%;
+    background-color: blueviolet;
+    color: white !important;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}

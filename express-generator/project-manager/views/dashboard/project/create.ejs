@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Create | Project Manager</title>
+</head>
+<body>
+    <div class="">
+        <div class="container">
+            <div class="flex space-between">
+                <h2>Create a Project</h2>
+                <a href="/dashboard">Back to Dashboard</a>
+            </div>
+            <form action="" method="post">
+                <div class="form-group">
+                    <input type="text" name="title" id="title" class="form-input" placeholder="Project Title">
+                </div>
+
+                <div class="form-group">
+                    <textarea name="description" id="description" cols="30" rows="10" class="form-input"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="date" name="dueDate" class="form-input" placeholder="Due Date">
+                </div>
+
+                <div class="form-group flex flex-end">
+                    <button type="reset" class="btn btn-gris">Cancel</button>
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

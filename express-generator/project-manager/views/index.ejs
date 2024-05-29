@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Register or Login | Project Manager</title>
+</head>
+<body>
+  
+  <div class="auth">
+    <div class="container">
+
+        <div class="center">
+          <h1 class="text-blue">Project Manager</h1>
+          <p>A place for teams to manage projects.</p>
+        </div>
+        <div class="column">
+            <div class="auth-left">
+              <h2>Register</h2>
+              <form action="/register" method="post">
+                <div class="form-group">
+                  <input class="form-input" name="firstName" type="text" placeholder="First Name">
+                  <span class="form-error-message">Error message</span>
+                </div>
+                <div class="form-group">
+                  <input class="form-input" name="lastName" type="text" placeholder="Last Name">
+                  <span class="form-error-message">Error message</span>
+                </div>
+                <div class="form-group">
+                  <input class="form-input" name="email" type="email" placeholder="Email">
+                  <span class="form-error-message">Error message</span>
+                </div>
+                <div class="form-group">
+                  <input class="form-input" name="password" type="password" placeholder="Password">
+                  <span class="form-error-message">Error message</span>
+                </div>
+                <div class="form-group">
+                  <input class="form-input" name="passwordConfirm" type="password" placeholder="Confirm Password">
+                  <span class="form-error-message">Error message</span>
+                </div>
+                <div class="flex flex-end">
+                  <button type="submit" class="btn">Register</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="auth-right">
+              <h2>Login</h2>
+              <form action="/login" method="post">
+                <div class="form-group">
+                  <input class="form-input" name="email" type="email" placeholder="Email">
+                  <span class="form-error-message">Error message</span>
+                </div>
+                <div class="form-group">
+                  <input class="form-input" name="password" type="password" placeholder="Password">
+                  <span class="form-error-message">Error message</span>
+                </div>
+                <div class="">
+                  <input type="checkbox"> Remember me
+                </div>
+                <div class="forgot center">
+                  <a href="/forgot-password">Forgot your password ?</a>
+                </div>
+                <div class="flex flex-end">
+                  <button type="submit" class="btn">Login</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>
