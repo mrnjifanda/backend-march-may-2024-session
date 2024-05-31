@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+    <h1>Welcome page</h1>
+
+    <form action="/send" method="post">
+        <div class="">
+            <label for="">Username</label>
+            <input type="text" name="username" placeholder="Enter username">
+        </div>
+
+        <div class="">
+            <label for="">Password</label>
+            <input type="password" name="password" placeholder="Enter password">
+        </div>
+
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

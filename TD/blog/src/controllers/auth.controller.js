@@ -6,7 +6,7 @@ const register = async (request, response, next) => {
     const create = await authService.register(request.body);
     if (!create.error) {
 
-        return response.status(201).json(
+        return response.status().json(
             res.success('Register succefully', null, 'CREATED', 201)
         );
     }

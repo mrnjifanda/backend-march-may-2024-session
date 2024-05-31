@@ -1,0 +1,401 @@
+:root{
+  --black: #000;
+  --blue: #1c9ac3;
+  --gris: #707070;
+}
+
+* {
+  box-sizing: border-box;
+  transition: .3s ease-in-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Global */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 2px solid var(--black);
+  color: var(--black);
+  display: inline-block;
+  box-shadow: 4px 4px 0px var(--black);
+  margin-left: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}
+
+.btn:hover {
+  box-shadow: -4px -4px 0px var(--black);
+}
+
+.btn-gris {
+  background-color: var(--gris);
+  color: #fff;
+}
+
+.btn-blue {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: rgb(187, 37, 37);
+  color: #fff;
+}
+
+.bg-danger {
+  background-color: rgb(175 109 109 / 41%);
+}
+
+.center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-detail {
+  margin-bottom: 30px;
+}
+
+.flex-detail span {
+  width: 100px;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+ul .flex-detail span {
+  width: 200px;
+}
+
+.flex-detail p {
+  width: calc(100% - 100px);
+  margin: 0;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.width {
+  width: 100%;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+header.home {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(assets/images/bg.png);
+  border-bottom: 2px solid var(--black);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav {
+ display: flex;
+ justify-content: flex-end;
+}
+
+header nav ul li:first-child a {
+  margin-left: 0px;
+}
+
+header.home .home-title {
+  margin-top: 200px;
+}
+
+header.home .home-title h2 {
+  font-size: 125px;
+  margin: 0;
+}
+
+header.home .home-title p {
+  font-size: 40px;
+  margin: 0;
+}
+
+.search {
+  position: relative;
+}
+
+.search form {
+  position: absolute;
+  top: -25px;
+}
+
+.search form input {
+  padding: 15px 20px;
+  border-radius: 25px;
+  height: 50px;
+  color: var(--black);
+  width: 512px;
+  font-size: 20px;
+}
+
+/* Posts */
+.posts {
+  margin-top: 60px;  
+}
+
+.posts h2 {
+  font-size: 40px;
+}
+
+.posts .posts-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.posts .card:first-child {
+  margin-left: 0px;
+}
+
+.posts .card {
+  margin-left: 20px;
+  padding: 0;
+}
+
+.posts .card img {
+  width: 100%;
+}
+
+.posts .card .card-content {
+  padding: 20px;
+}
+
+.posts .card .card-content h4,
+.posts .card .card-content p {
+  margin: 0;
+  padding: 0;
+}
+
+.posts .card .card-content h4 {
+  font-size: 20px;
+}
+
+/* Auth */
+.column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column h2 {
+  font-size: 55px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group .form-input {
+  width: 100%;
+  border: 4px solid var(--black);
+  border-radius: 0;
+  padding: 10px;
+  font-size: 16px;
+  color: var(--black);
+  margin-bottom: 5px;
+}
+
+.form-group .form-input:focus-visible {
+  border-radius: 0;
+}
+
+.form-group .form-error-message {
+  color: rgba(255, 0, 0, 0.89);
+  padding-left: 5px;
+}
+
+.forgot {
+  margin: 20px 0;
+}
+
+/* Search results */
+header.home.search-result {
+  height: 400px;
+  background-image: url(assets/images/bg-search.jpg);
+  background-position-y: -345px;
+  border-bottom: none;
+}
+
+header.home.search-result .home-title {
+  margin-top: 60px;
+}
+
+.search.search-result {
+  display: flex;
+  justify-content: center;
+}
+
+.search.search-result form {
+  position: relative;
+}
+
+/* Article */
+.post-comments {}
+
+.post-comments .post-comments-title {
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 5px;
+  font-size: 35px;
+}
+
+.post-comments .post-comments-contents .post-comments-content {
+  display: flex;
+  justify-content: space-around;
+  background: radial-gradient(#00000050, transparent);
+  margin-bottom: 10px;
+}
+
+.post-comments .post-comments-contents .post-comments-content .comment-left img {
+  width: 70px;
+}
+
+.post-comments .post-comments-contents .post-comments-content .comment-left p {
+  margin: 0;
+  text-align: center;
+}
+
+.post-comments .post-comments-contents .post-comments-content .comment-right {
+  padding: 15px;
+}
+
+.post-comments .post-comments-contents .post-comments-content .comment-right span {}
+
+
+.post-comments .post-comments-contents .post-comments-content .comment-right p {
+  margin-bottom: 0;
+}
+
+.post-comments .leave-a-comment {
+  background: #ebebeb;
+  padding: 20px;
+  margin: 35px 0;
+}
+
+.post-comments .leave-a-comment > h3 {
+  font-size: 30px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 20px;
+  margin: 0 0 20px 0;
+}
+
+.post-comments .leave-a-comment .form-comment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-comments .leave-a-comment .form-comment .comment-left {
+  text-align: center;
+  margin-right: 20px;
+}
+
+.post-comments .leave-a-comment .form-comment .comment-left img {
+  width: 70px;
+}
+
+.post-comments .leave-a-comment .form-comment .comment-right {
+  width: 100%;
+}
+
+/* Table */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table th, .table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  color: #fff;
+  background: #000;
+}
+
+.table tr:nth-child(2n) {
+  background: #ebebeb;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: var(--black);
+  border: 2px solid var(--black);
+  text-decoration: none;
+}
+
+.page-link:hover,
+.page-item.active .page-link {
+  border-color: transparent;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: not-allowed;
+  border-color: #dee2e6;
+}
+
+.tasks {}
+
+.tasks ul {
+  background: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.tasks ul li:last-child{
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}

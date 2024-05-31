@@ -1,95 +1,75 @@
 import { Injectable } from '@angular/core';
+import { FetchService } from './fetch.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  base_url = "http://localhost:3000/api";
+  constructor(private fetchService: FetchService) {
 
-  async ajax(url: string, data: any = null, auth: boolean = true) {
+    this.fetchService.setBaseUrl("http://localhost:3000/api");
+  }
 
-    try {
+  setCookie(name: string, value: string): void {
+  
+    const now = new Date();
+    const expires = new Date(now.getTime() + 60 * 30 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  }
 
-        const options: any = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        };
+  getCookie(name: string): string|null {
 
-        if (auth) {
-
-            // const user = local_storage.get(user_key);
-            // options.headers.auth_token = user.token;
-        }
-
-        if (data) {
-
-            options.method = data.method ?? 'POST'
-            options.body = JSON.stringify(data)
-        }
-
-        const request = await fetch(this.base_url + url, options);
-        return await request.json();
-    } catch (error) {
-
-        console.log(error);
-        return null
-    }
+    let cookies: any = {};
+    document.cookie.split(";").forEach(cookie => {
+      let [key, value] = cookie.split("=");
+      cookies[key] = value;
+    });
+  
+    return cookies[name] ?? null;
   }
 
   async getAllPost() {
 
-    try {
-
-      const resquest = await fetch(this.base_url + "/post");
-      if (resquest.ok && resquest.status === 200) {
-        
-        const response = await resquest.json();
-        return { error: false, data: response.data };
-      }
-
-      return { error: true, data: resquest.status };
-    } catch (error: any) {
-      
-      return { error: true, data: error.message };
-    }
+    return await this.fetchService.ajax("/post");
   }
 
   async searchRequest(q: string) {
-    try {
 
-      const request = await fetch(this.base_url + "/post/search?q=" + q);
-      if (request.ok && request.status === 200) {
-
-        const response = await request.json();
-        return { error: false, data: response.data };
-      }
-
-      return { error: true, data: request.status };
-    } catch (error: any) {
-
-      return { error: true, data: error.message }
-    }
+    return await this.fetchService.ajax("/post/search?q=" + q);
   }
 
   async getOnePost (id: string) {
 
-    try {
+    return await this.fetchService.ajax("/post/" + id);
+  }
 
-      const request = await fetch(this.base_url + "/post/" + id);
-      if (request.ok && request.status === 200) {
+  async register (data: any) {
 
-        const response = await request.json();
-        return { error: false, data: response.data };
-      }
+    return await this.fetchService.ajax("/auth/register", data);
+  }
 
-      return { error: true, data: request.status };
-    } catch (error: any) {
+  async login (data: any) {
 
-      return { error: true, data: error.m };
+    return await this.fetchService.ajax("/auth/login", data);
+  }
+
+  async confirmEmail (data: any) {
+
+    return await this.fetchService.ajax("/auth/confirm-email", data);
+  }
+
+  async getAllPostByAuthUser() {
+
+    const token = this.getCookie(" authorization");
+    console.log(token);
+    
+    if (token) {
+
+      this.fetchService.setToken("Bearer " + token);
+      return await this.fetchService.ajax("/post/user", null, "authorization");
     }
+
+    return { error: true, data: "Auth not found" };
   }
 }

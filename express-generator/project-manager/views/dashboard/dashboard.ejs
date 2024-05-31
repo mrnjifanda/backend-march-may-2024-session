@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Dashboard | Project Manager</title>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="container">
+            <div class="">
+                <h1>Dashboard</h1>
+                <div class="flex flex-end">
+                    <a href="/dashboard/project/create" class="btn">+ Add project</a>
+                    <form class="logout" action="/logout" method="post">
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                </div>
+            </div>
+            <div class="">
+                <h2>All Projects</h2>
+                <div class="">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Team Lead</th>
+                                <th>Due Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Title"><a href="/dashboard/project/1">Retail Product Interface</a></td>
+                                <td data-label="Team Lead">Tyler</td>
+                                <td data-label="Due Date">Dec 16</td>
+                                <td data-label="Actions">
+                                    <a href="/dashboard/project/join/1">Join team</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                    <div class="flex flex-end" aria-label="Navigation">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">< prev</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">next ></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <h2>Your Projects</h2>
+                <div class="">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Lead</th>
+                                <th>Due Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Title"><a href="/dashboard/project/1">Retail Product Interface</a></td>
+                                <td data-label="Team Lead">Tyler</td>
+                                <td data-label="Due Date">Dec 16</td>
+                                <td data-label="Actions">
+                                    <a href="/dashboard/project/join/1">Join team</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Title"><a href="/dashboard/project/1">Retail Product Interface</a></td>
+                                <td data-label="Team Lead">Tyler</td>
+                                <td data-label="Due Date">Dec 16</td>
+                                <td data-label="Actions">
+                                    <a href="/dashboard/project/edit/1">Edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                    <div class="flex flex-end" aria-label="Navigation">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">< prev</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">next ></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
