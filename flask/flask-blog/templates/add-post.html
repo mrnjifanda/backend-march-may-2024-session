@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div class="">
+        <a href="/">Home page</a>
+    </div>
+    <div class="">
+        <form action="/create" method="post">
+            <div class="">
+                <label for="">Title</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="">
+                <label for="">Author</label>
+                <input type="text" name="author" required>
+            </div>
+            <div class="">
+                <label for="">Description</label>
+                <textarea name="description" required></textarea>
+            </div>
+            <div class="">
+                <button type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
