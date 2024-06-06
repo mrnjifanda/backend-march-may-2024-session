@@ -1,39 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>Welcome Page</h1>
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <h1>{% block title %} Home page  {% endblock %}</h1>
+
+    <h1>Welcome page</h1>
     <div class="">
-        <a href="/add-post">Add Post</a>
+        <a href="/auth/login">Login</a> | <a href="/auth/register">Register</a>
     </div>
-    <div class="">
-        <h1>All articles</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Author</th>
-                    <th>Title</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for article in articles %}
-                <tr>
-                    <td>{{ article.id }}</td>
-                    <td>{{ article.author }}</td>
-                    <td>{{ article.title }}</td>
-                    <td>
-                        <a href="/view/{{ article.id }}">View</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+
+{% endblock %}

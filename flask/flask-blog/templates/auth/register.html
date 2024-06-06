@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <h1>{% block title %} Register page  {% endblock %}</h1>
+
+    <h1>Register Form</h1>
+    <div class="">
+        <form action="/auth/register-post" method="post">
+            <div class="">
+                <label for="">Username</label>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="">
+                <label for="">Email</label>
+                <input type="text" name="email" placeholder="Email" required>
+            </div>
+            <div class="">
+                <label for="">Password</label>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="">
+                <label for="">Confirm Password</label>
+                <input type="password" name="password-confirm" placeholder="Confirm Password" required>
+            </div>
+            <div class="">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

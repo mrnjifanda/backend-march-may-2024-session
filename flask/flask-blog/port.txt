@@ -1,0 +1,6 @@
+Ports
+    udp (entre 10000 et 20000)
+    tcp
+    rtp
+Http
+    8088

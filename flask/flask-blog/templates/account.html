@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <h1>{% block title %} Account page  {% endblock %}</h1>
+
+    <h1>Welcome back</h1>
+    <div class="">
+        <form action="/auth/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+{% endblock %}
